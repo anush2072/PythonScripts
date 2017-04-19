@@ -11,20 +11,23 @@ def getRandomWord():
 
 def hangAMan(turn):
 
-    if turn == 10:
+    if turn == 7:
          print("-----\n|\n|\n|\n|\n|\n|\n|\n|\n-------\n--------")
-    elif turn == 9:
-        print("-----\n|   |\n|   O\n|\n|\n|\n|\n|\n|\n-------\n--------")
-    elif turn ==  8:
-        print("-----\n|   |\n|   O\n|  -+-\n|\n|\n|\n|\n|\n-------\n--------")
-    elif turn == 7:
-        print("-----\n|   |\n|\n|\n|\n|\n|\n|\n|\n-------\n--------")
     elif turn == 6:
-        print("-----\n|   |\n|\n|\n|\n|\n|\n|\n|\n-------\n--------")
+        print("-----\n|   |\n|   O\n|\n|\n|\n|\n|\n|\n-------\n--------")
     elif turn == 5:
-        print("-----\n|   |\n|\n|\n|\n|\n|\n|\n|\n-------\n--------")
+        print("-----\n|   |\n|   O\n|  -+-\n|\n|\n|\n|\n|\n-------\n--------")
     elif turn == 4:
-        print("-----\n|   |\n|\n|\n|\n|\n|\n|\n|\n-------\n--------")
+        print("-----\n|   |\n|   O\n| (-+-\n|\n|\n|\n|\n|\n-------\n--------")
+    elif turn == 3:
+        print("-----\n|   |\n|   O\n| (-+-)\n|\n|\n|\n|\n|\n-------\n--------")
+    elif turn == 2:
+        print("-----\n|   |\n|   O\n| (-+-)\n|   |\n|\n|\n|\n|\n-------\n--------")
+    elif turn == 1:
+        print("-----\n|   |\n|   O\n| (-+-)\n|  (|\n|\n|\n|\n|\n-------\n--------")
+    elif turn == 0:
+        print("-----\n|   |\n|   O\n| (-+-)\n|  (|)\n|\n|\n|\n|\n-------\n--------")
+       
 
 
 
@@ -37,6 +40,8 @@ def main():
     #wait for 1 second
     time.sleep(1)
 
+    #determine the number of turns
+    turns = 7
     hangAMan(10)
 
     print("Start guessing...")
@@ -44,9 +49,6 @@ def main():
 
     #creates an variable with an empty value
     guesses = ''
-
-    #determine the number of turns
-    turns = 10
 
     #here we set the secret
     word = getRandomWord()
@@ -58,7 +60,7 @@ def main():
     while( turns > 0 ):         
 
         # ask the user to guess a character
-        guess = input("\nGuess a character:") 
+        guess = input("\nGuess a character in the password :") 
 
         # set the players guess to guesses
         guesses += guess                    
@@ -83,10 +85,9 @@ def main():
 
         # if failed is equal to zero
         # print You Won
-        if failed == 0:        
-            print ("You won")  
-
         # exit the script
+        if failed == 0:        
+            print ("\nYou won")  
             break              
 
         # if the guess is not found in the secret word
@@ -98,16 +99,10 @@ def main():
             hangAMan(turns)      
      
         # print wrong
-            print( "Wrong")
-     
-        # # how many turns are left
-        #     print("You have", + turns, 'more guesses')
-     
-        # # if the turns are equal to zero
-        #     if turns == 0:           
-        
-        #     # print "You Loose"
-        #         print("You Loose")
+            print( "\nWrong")
+
+            if turns == 0:
+                print("\nYou loose!")
 
 
 if __name__ == "__main__": main()
