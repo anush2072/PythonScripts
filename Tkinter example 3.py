@@ -28,9 +28,10 @@ def _quit():
     root.destroy()  # this is necessary on Windows to prevent Fatal Python Error: PyEval_RestoreThread: NULL tstate
 
 def quarterly():
-	plt.bar(df1.Date,df1.Revenue)
+	plt.bar(df1.Date,df1.Revenue, label='Quarterly Revenue')
 	plt.xticks(rotation=45)
-	plt.ylabel('Total ( x 10 millions )')
+	plt.ylabel('Total ( x 10 millions )', color='green')
+	plt.legend()
 	plt.show()
 
 def annual():
@@ -45,7 +46,7 @@ def annual():
 				ha='center', va='bottom')
 		i = i+1
 
-	ax.set_ylabel('Total ( x 100 millions )')	
+	ax.set_ylabel('Total ( x 100 millions )', color='green')	
 	fig.tight_layout()
 	plt.show()
 
