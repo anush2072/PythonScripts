@@ -1,3 +1,5 @@
+import matplotlib
+matplotlib.use("TkAgg")
 from tkinter import *
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -9,11 +11,11 @@ data1 = {'Date': ['3/31/2018','6/30/2018','9/30/2018','12/31/2018','3/31/2019','
         }
 df1 = DataFrame(data1,columns=['Date','Revenue'])
 
-
 data2 = {'Year': ['12/31/2017','12/31/2018','12/31/2019'],
          'AnnualRevenue': [1.05E+08,1.45E+08,2E+08]
         }
 df2 = DataFrame(data2,columns=['Year','AnnualRevenue'])
+#print(pd.to_datetime(df2.Year))
 annual_x_labels = df2["AnnualRevenue"].pct_change(periods = 1)*100
 annual_x_labels[0] = 0
 for i in range(len(annual_x_labels)):
