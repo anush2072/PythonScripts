@@ -40,6 +40,8 @@ class MorningStarCharts:
 		self.tkvar = StringVar(self.master)
 		self.tkvar.set('2020') # set the default option
 		self.popupMenu = OptionMenu(self.master, self.tkvar, *choices)
+		# Tkinter color chart : http://www.science.smith.edu/dftwiki/index.php/Color_Charts_for_TKinter
+		self.popupMenu["menu"].config(bg="green yellow", activebackground="lime green")
 		self.label = Label(self.master, text="Choose an Year")
 
 		self.draw_Annual()
@@ -51,15 +53,15 @@ class MorningStarCharts:
 		self.canvas.get_tk_widget().place(relheight=0.75, relwidth=1)	
 				
 		# Quarterly button
-		self.btn1 = Button(self.master, text="Quaterly Graph", cursor="hand2", command=self.draw_Quarterly)
-		self.btn1.place(relx=0.10, rely=0.752, relheight=0.05, relwidth=0.2)
+		self.btn1 = Button(self.master, text="Quaterly Graph", cursor="hand2", borderwidth=3, relief=RAISED, command=self.draw_Quarterly)
+		self.btn1.place(relx=0.10, rely=0.762, relheight=0.05, relwidth=0.2)
 
 		# Annual button
-		self.btn2 = Button(self.master, text="Annual Graph", cursor="hand2", command=self.draw_Annual)
+		self.btn2 = Button(self.master, text="Annual Graph", cursor="hand2", borderwidth=3, relief=RAISED, command=self.draw_Annual)
 		self.btn2.place(relx=0.10, rely=0.825, relheight=0.05, relwidth=0.2)
 
 		# CLOSE button
-		self.button = Button(self.master, text="CLOSE", cursor="hand1", command=self._quit, fg="red")
+		self.button = Button(self.master, text="CLOSE", cursor="hand1", borderwidth=5, relief=RAISED, command=self._quit, fg="red")
 		self.button.place(relx=0.50, rely=0.875, relheight=0.05, relwidth=0.2)
 
 	def _quit(self):
@@ -73,8 +75,8 @@ class MorningStarCharts:
 	
 	def draw_Quarterly(self):
 		#print('Displaying quarterly charts for Year : ' + self.tkvar.get())
-		self.label.place(relx=0.30, rely=0.752, relheight=0.05, relwidth=0.2)
-		self.popupMenu.place(relx=0.50, rely=0.752, relheight=0.05, relwidth=0.2)
+		self.label.place(relx=0.30, rely=0.762, relheight=0.05, relwidth=0.2)
+		self.popupMenu.place(relx=0.50, rely=0.762, relheight=0.05, relwidth=0.2)
 		
 		# Re-draw Quarterly on drop-down change
 		year_selected = self.tkvar.get()
