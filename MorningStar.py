@@ -1,3 +1,4 @@
+# Pandas and Tkinter example : Pull data from a Panda's dataFrame and plot the data trends in a GUI
 import matplotlib
 matplotlib.use("TkAgg")
 from tkinter import *
