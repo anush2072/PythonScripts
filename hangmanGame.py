@@ -52,7 +52,7 @@ def main():
 
     #here we set the secret
     word = getRandomWord()
-    print(word)
+    #print(word)
 
     # Create a while loop
 
@@ -95,7 +95,7 @@ def main():
      
          # turns counter decreases with 1
             turns -= 1  
-            print(turns)
+            print("\nNumber of turn left : ", turns)
             hangAMan(turns)      
      
         # print wrong
