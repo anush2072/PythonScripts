@@ -52,7 +52,7 @@ def main():
 
     #here we set the secret
     word = getRandomWord()
-    print(word)
+    #print(word)
 
     # Create a while loop
 
