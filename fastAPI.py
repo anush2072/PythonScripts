@@ -1,4 +1,3 @@
-from email.policy import default
 from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 
