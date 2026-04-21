@@ -1,2 +1,11 @@
 New Text Document.txt
 __pycache__/tabulate.cpython-37.pyc
+
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
